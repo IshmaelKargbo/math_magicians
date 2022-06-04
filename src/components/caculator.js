@@ -24,11 +24,15 @@ const numbersAndSigns = [
   '=',
 ];
 
-const Calculator = () => (
-  <div className="calculator">
-    <Result result="0" />
-    {numbersAndSigns.map((value) => <Button key={value} value={value} />)}
-  </div>
-);
+class Calculator extends React.PureComponent {
+  render() {
+    return (
+      <div className="calculator">
+        <Result result="0" />
+        {numbersAndSigns.map((value) => <Button key={value} value={value} />)}
+      </div>
+    );
+  }
+}
 
 export default Calculator;

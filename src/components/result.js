@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Result = (props) => {
-  const { result } = props;
+class Result extends React.PureComponent {
+  render() {
+    const { result } = this.props;
 
-  return (
-    <p className="result">
-      {result}
-    </p>
-  );
-};
+    return (
+      <p className="result">
+        {result}
+      </p>
+    );
+  }
+}
 
 Result.propTypes = {
   result: PropTypes.string,
