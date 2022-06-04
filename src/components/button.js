@@ -11,10 +11,10 @@ const operations = [
 
 class Button extends React.PureComponent {
   render() {
-    const { value, handleClick } = this.props;
+    const { value, onClick } = this.props;
 
     return (
-      <div className={`button ${operations.includes(value) ? 'orange' : ' '} `} id={`button-${value}`} onClick={() => handleClick(value)} onKeyDown={() => null} role="button" tabIndex={0}>
+      <div className={`button ${operations.includes(value) ? 'orange' : ' '} `} id={`button-${value}`} onClick={() => onClick(value)} onKeyDown={() => null} role="button" tabIndex={0}>
         {value}
       </div>
     );
@@ -23,12 +23,12 @@ class Button extends React.PureComponent {
 
 Button.propTypes = {
   value: PropTypes.string,
-  handleClick: PropTypes.func,
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
   value: '',
-  handleClick: () => {},
+  onClick: () => {},
 };
 
 export default Button;
