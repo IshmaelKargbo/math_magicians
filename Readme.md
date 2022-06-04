@@ -5,8 +5,8 @@ Math magicians is a website for all fans of mathematics. It is a Single Page App
 - Read a random math-related quote.
 
 
-<!-- #### App Screenshot -->
-<!-- <img src="./app_screenshot.png" alt="Math magicians" /> -->
+#### App Screenshot
+<img src="./app_screenshot.png" alt="Math magicians" />
 
 <!-- ### Live Demo -->
 <!-- <a href="https://ishmaelkargbo.github.io/todo-list">Math magicians</a> -->
