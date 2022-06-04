@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './button';
 import Result from './result';
 import calculate from '../logic/caculate';
@@ -25,33 +25,28 @@ const numAndSigns = [
   '=',
 ];
 
-class Calculator extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: '0',
-      next: null,
-      operation: null,
-    };
-  }
+const Calculator = () => {
+  const [result, setResult] = useState({
+    total: '0',
+    next: null,
+    operation: null,
+  });
 
-  onClick = (sign) => {
-    const result = calculate(this.state, sign);
-    this.setState(result);
-  }
+  onclick = (sign) => {
+    const res = calculate(result, sign);
+    setResult(res);
+  };
 
-  render() {
-    const { total, next, operation } = this.state;
+  const { total, next, operation } = result;
 
-    return (
-      <div className="calculator">
-        <Result result={`${total ?? ''}${operation ?? ''}${next ?? ''}`} />
-        {
-          numAndSigns.map((value) => <Button key={value} value={value} onClick={this.onClick} />)
+  return (
+    <div className="calculator">
+      <Result result={`${total ?? ''}${operation ?? ''}${next ?? ''}`} />
+      {
+          numAndSigns.map((value) => <Button key={value} value={value} onClick={onclick} />)
         }
-      </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Calculator;
